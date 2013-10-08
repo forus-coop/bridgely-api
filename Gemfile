@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 ruby "2.0.0"
 
@@ -40,8 +40,8 @@ group :development do
   gem "rspec-rails"
   gem 'guard-rails'
   gem 'guard-bundler'
-  gem 'sqlite3'
-  gem 'debugger'
+  #gem 'sqlite3'
+  #gem 'debugger'
 end
 
 # Heroku gems
