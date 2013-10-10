@@ -131,7 +131,7 @@ class V1::TwilioController < ApplicationController
   end
 
   def build_responder_link
-    @company[:settings][:responder_link_root] + "/##{@company.short_name}/#{@employee.id}"
+    @company[:settings][:responder_link_root] + "/#{@company.short_name}/#{@employee.id}"
   end
 
   def validate_twilio_header
