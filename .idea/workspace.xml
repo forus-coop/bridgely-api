@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0c08e47f-dd46-447d-94e9-13bac68612f1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/v1/twilio_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/v1/twilio_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bridgely-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -11,6 +12,7 @@
     <file path="/Gemfile" changelist="0c08e47f-dd46-447d-94e9-13bac68612f1" time="1380767741597" ignored="false" />
     <file path="$USER_HOME$/bridgely/.tmp/scripts/templates.js" changelist="0c08e47f-dd46-447d-94e9-13bac68612f1" time="1380770355246" ignored="false" />
     <file path="/a.dummy" changelist="0c08e47f-dd46-447d-94e9-13bac68612f1" time="1380935733909" ignored="false" />
+    <file path="/twilio_controller.rb" changelist="0c08e47f-dd46-447d-94e9-13bac68612f1" time="1381363863698" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +80,7 @@
       <file leaf-file-name="twilio_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/v1/twilio_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="89" selection-start="4366" selection-end="4366" vertical-scroll-proportion="0.53783786">
+            <state line="133" column="66" selection-start="4343" selection-end="4343" vertical-scroll-proportion="0.53783786">
               <folding />
             </state>
           </provider>
@@ -811,7 +813,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/v1/twilio_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="89" selection-start="4366" selection-end="4366" vertical-scroll-proportion="0.53783786">
+        <state line="133" column="66" selection-start="4343" selection-end="4343" vertical-scroll-proportion="0.53783786">
           <folding />
         </state>
       </provider>
