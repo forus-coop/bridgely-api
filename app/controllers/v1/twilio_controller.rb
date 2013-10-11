@@ -36,14 +36,14 @@ class V1::TwilioController < ApplicationController
         )
       end
 
-      if @employee.persisted?
-        @record.save
-        @record.message.save
-        @employee.save #save changes to the employee data attribute
+      should_respond=(@employee.new_record? || @employee.always_respond)
+
+      @record.save
+      @record.message.save
+      @employee.save
+      if should_respond
         render :json=> {:success => true}, status: :ok
       else
-        @record.save
-        @employee.save
         render :xml=> twiml_response, status: :ok
       end
     end

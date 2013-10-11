@@ -12,7 +12,7 @@ class ApplicationController < ActionController::API
   include ActionController::ImplicitRender
 
   # CORS Headers
-  before_filter :cors
+  #before_filter :cors
 
   def cors
     headers['Access-Control-Allow-Origin'] = '*'

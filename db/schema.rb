@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130927222311) do
+ActiveRecord::Schema.define(version: 20131011222921) do
 
   create_table "v1_activities", force: true do |t|
     t.integer "employee_id"
@@ -61,12 +61,13 @@ ActiveRecord::Schema.define(version: 20130927222311) do
   add_index "v1_admin_users", ["email"], name: "index_v1_admin_users_on_email"
 
   create_table "v1_employees", force: true do |t|
-    t.integer  "company_id", null: false
-    t.string   "phone",      null: false
-    t.string   "name",       null: false
+    t.integer  "company_id",     null: false
+    t.string   "phone",          null: false
+    t.string   "name",           null: false
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "always_respond"
   end
 
   add_index "v1_employees", ["company_id"], name: "index_v1_employees_on_company_id"
