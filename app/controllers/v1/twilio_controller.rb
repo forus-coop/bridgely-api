@@ -36,15 +36,16 @@ class V1::TwilioController < ApplicationController
         )
       end
 
-      should_respond=(@employee.new_record? || @employee.always_respond)
+      should_respond=(@employee.new_record? || @employee.always_respond?)
 
       @record.save
       @record.message.save
       @employee.save
       if should_respond
-        render :json=> {:success => true}, status: :ok
+        response_message=twiml_response
+        render :xml=> response_message, status: :ok
       else
-        render :xml=> twiml_response, status: :ok
+        render :json=> {:success => true}, status: :ok
       end
     end
 
