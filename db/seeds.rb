@@ -8,11 +8,13 @@
 
 # NOTE THESE ARE FOR TESTING AND NEED TO BE UPDATED BEFORE GOING TO PRODUCTION
 
-admin = V1::Admin::User.create( {name: 'Admin User', email: 'michael@nason.us', password: 'test_password' } )
-admin.update_attribute( :admin, true )
+user1 = V1::Admin::User.new( {name: 'Sergey Zelvenskiy', email: 'sergey@forusall.com', password: 'test_password' } )
+user1.update_attribute( :admin, true )
 
-user1 = V1::Admin::User.new( {name: 'David ForUs', email: 'forus@nason.us', password: 'test_password' } )
-user1.create_company({
+user2 = V1::Admin::User.new( {name: 'David Ramirez', email: 'david@forusall.com', password: 'test_password' } )
+user2.update_attribute( :admin, true )
+
+user2.create_company({
   name: 'ForUs',
   short_name: 'forus',
   account_sid: TWILIO_SID,
@@ -23,18 +25,4 @@ user1.create_company({
     account_phone_number: '+15106069589'
   }
 })
-user1.save
-
-user2 = V1::Admin::User.new( {name: 'Michael Reactor', email: 'hr@nason.us', password: 'test_password' } )
-user2.create_company(
-  name: 'Hack Reactor',
-  short_name: 'hackr',
-  account_sid: HR_SUB_SID,
-  sub_auth_token: HR_SUB_AUTH_TOKEN,
-  settings: {
-    autoresponder: 'Thanks for joining the [company] mobile directory, [name]! Visit [link] to get started',
-    responder_link_root: 'www.hackreactor.com',
-    account_phone_number: '+17864310738'
-  }
-)
 user2.save

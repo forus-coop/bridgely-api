@@ -36,7 +36,7 @@ class V1::TwilioController < ApplicationController
         )
       end
 
-      should_respond=(@employee.new_record? || @employee.always_respond?)
+      should_respond=true#(@employee.new_record? || @employee.always_respond?)
 
       @record.save
       @record.message.save
