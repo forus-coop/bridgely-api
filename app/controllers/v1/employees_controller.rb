@@ -17,6 +17,9 @@ class V1::EmployeesController < ApplicationController
   # GET /v1/employees/company/1
   def company_index
 
+    puts "@current_user = #{@current_user}"
+    puts "params[:company_id] = #{params[:company_id]}"
+
     if @current_user.admin? or @current_user.company.id == params[:company_id].to_i
       @v1_employees = V1::Employee.all.where(company_id: params[:company_id])
       render json: @v1_employees

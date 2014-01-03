@@ -27,21 +27,21 @@ gem 'figaro'
 
 # Deploy with Capistrano
 # gem 'capistrano', :group => :development
+group :test, :development do
+  gem "rspec-rails"
+  gem 'guard-rspec'
+  gem 'debugger'
+  gem 'sqlite3'
+end
 
 group :test do
-  gem "rspec-rails"
+  gem "factory_girl_rails", ">= 4.0.0"
+  gem "capybara"
 #  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
-  gem 'guard-rspec'
-  gem 'sqlite3'
-  gem 'debugger'
 end
 
 group :development do
-  gem "rspec-rails"
-  gem 'guard-rails'
   gem 'guard-bundler'
-  gem 'sqlite3'
-  gem 'debugger'
 end
 
 # Heroku gems

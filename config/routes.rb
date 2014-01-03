@@ -4,7 +4,7 @@ BridgelyApi::Application.routes.draw do
     # Sessions
     post "/auth/login"     => "sessions#create"
     delete "/auth/logout"  => "sessions#destroy"
-
+    
     # Twilio
     post "/twilio/inbound" => "twilio#create"
     post "/twilio/status"  => "twilio#update"
@@ -12,6 +12,9 @@ BridgelyApi::Application.routes.draw do
     resources :questions, except: [:new, :edit]
     resources :messages, except: [:new, :edit]
     resources :employees, except: [:new, :edit]
+
+
+    get "/onboarding" => "onboarding#create"
 
     # Get a company's employee directory
     get "/companies/:company_id/employees" => "employees#company_index"
