@@ -5,6 +5,8 @@ BridgelyApi::Application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
+  config.TWILIO_AUTH_TOKEN = "2c619e5b94483a27df23cb15c2b94ec5"
+  config.TWILIO_SID        = "AC196955fba4ee58a5a49a32c8dcae328c"
 
   # Do not eager load code on boot.
   config.eager_load = false

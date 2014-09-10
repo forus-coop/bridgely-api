@@ -23,3 +23,4 @@
 
 # Ignore gemfile.lock
 gemfile.lock
+/.idea/

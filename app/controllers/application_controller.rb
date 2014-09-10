@@ -19,8 +19,8 @@ class ApplicationController < ActionController::API
     headers['Access-Control-Expose-Headers'] = 'ETag'
     headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE'
     headers["Access-Control-Allow-Headers"] = %w{Origin Accept Content-Type Authorization X-Requested-With }.join(",")
-    head(:ok) if request.request_method == "OPTIONS"
-
+    # head(:ok) if request.request_method == "OPTIONS"
+    # head(:ok)
     # headers['Access-Control-Allow-Headers'] = '*,x-requested-with,Content-Type,If-Modified-Since,If-None-Match, X-CSRF-Token'
     # headers['Access-Control-Max-Age'] = '86400'
   end
@@ -28,7 +28,11 @@ class ApplicationController < ActionController::API
   private
 
   def require_token
+
+    # @current_user = V1::Admin::User.find_by_authorization_token(params[:authorization_token]) if V1::Admin::User.exists?(authorization_token: params[:authorization_token])
     authenticate_or_request_with_http_token do |key, options|
+      # puts "key = #{key}"
+      # Rails.logger.debug{ "key = #{key}" }
       @current_user = V1::Admin::User.find_by_authorization_token(key) if V1::Admin::User.exists?(authorization_token: key)
     end
   end
@@ -40,14 +44,10 @@ class ApplicationController < ActionController::API
   end
 
   def send_sms_messages
-
     @company = @v1_message.company
     @account = @twilio_client.accounts.get(@company.account_sid)
     @account_number = @company.settings[:account_phone_number]
-
-    @recipients = V1::Employee.find( @v1_message.employee_ids )
-
-    @recipients.each do |recipient|
+    V1::Employee.find( @v1_message.employee_ids ).each do |recipient|
       if recipient.company_id === @company.id
         @sms = @account.messages.create({
           :from => @account_number,
@@ -68,5 +68,4 @@ class ApplicationController < ActionController::API
       end
     end
   end
-
 end

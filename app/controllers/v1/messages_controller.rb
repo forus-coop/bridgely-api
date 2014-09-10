@@ -61,11 +61,9 @@ class V1::MessagesController < ApplicationController
     @v1_message = V1::Message.new( message_params.except(:employee_ids) )
 
     if message_params[:employee_ids] === 'all'
-
       # If :employee_ids param is 'all', send to the whole company's mobile directory
       @v1_message.employee_ids = @v1_message.company.employee_ids
     else
-
       # :employees_ids is a string list of ids ('1,2,3'), convert it into an array
       @v1_message.employee_ids = message_params[:employee_ids].split(",").map { |s| s.to_i }
     end

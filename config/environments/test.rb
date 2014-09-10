@@ -7,6 +7,9 @@ BridgelyApi::Application.configure do
   # and recreated between test runs. Don't rely on the data there!
   config.cache_classes = true
 
+  config.TWILIO_AUTH_TOKEN = "2c619e5b94483a27df23cb15c2b94ec5"
+  config.TWILIO_SID        = "AC196955fba4ee58a5a49a32c8dcae328c"
+
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that
   # preloads Rails for running tests, you may have to set it to true.
